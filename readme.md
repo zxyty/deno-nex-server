@@ -2,10 +2,12 @@
 使用
 
 ```ts
-import NexServer from './nex.ts';
-import router from './route.ts';
-import { NexRequest } from './request.ts';
-import NexResponse from './response.ts';
+import {
+    NexServer,
+    NexRequest,
+    NexResponse,
+    router,
+} from 'https://raw.githubusercontent.com/zxyty/deno-nex-server/master/mod.ts';
 
 router
     .static("./public")
