@@ -1,4 +1,4 @@
-import { Response } from "./deps.ts";
+import { Response, mime, path as stdPath } from "./deps.ts";
 
 interface CookieOptions {
   domain?: string;
@@ -17,7 +17,7 @@ export default class NexResponse {
 
   private code: number = 200;
 
-  private contentType: string = "text/plain";
+  private contentType: string = "";
 
   private cookies: string[] = [];
 
@@ -115,6 +115,8 @@ export default class NexResponse {
     header.set("Access-Control-Allow-Origin", "*");
     if (this.contentType) {
       header.set("Content-Type", this.contentType);
+    } else {
+      header.set("Content-Type", mime.getType(stdPath.extname(f)));
     }
     header.set("Status", "200");
     header.set(
