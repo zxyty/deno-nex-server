@@ -8,8 +8,9 @@ export {
   serve,
   Server,
 } from "https://deno.land/std/http/mod.ts";
+export * as path from "https://deno.land/std/path/mod.ts";
+
 export { default as querystringify } from "https://dev.jspm.io/querystringify";
 export { default as pathToRegexp } from "https://dev.jspm.io/path-to-regexp";
-
-export * as path from "https://deno.land/std/path/mod.ts";
 export { default as mime } from "https://dev.jspm.io/mime";
+
