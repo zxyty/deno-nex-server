@@ -6,10 +6,10 @@ import {
     NexServer,
     NexRequest,
     NexResponse,
-    router,
-} from 'https://raw.githubusercontent.com/zxyty/deno-nex-server/master/mod.ts';
+    route,
+} from 'https://gitee.com/zxyty/deno-nex-server/raw/master/mod.ts';
 
-router
+route
     .static("./public")
     .static("./static")
     .get("/test1", (req: NexRequest, res: NexResponse) => {
@@ -28,5 +28,5 @@ router
         res.send(req);
     });
 
-new NexServer({port: 30001}).use(router).start();
+new NexServer({port: 30001}).use(route).start();
 ```

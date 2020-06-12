@@ -53,6 +53,8 @@ export default class NexResponse {
     let body = data;
     if (typeof data === "object") {
       body = JSON.stringify(data);
+    } else {
+      body = String(data);
     }
 
     const header = new Headers();
